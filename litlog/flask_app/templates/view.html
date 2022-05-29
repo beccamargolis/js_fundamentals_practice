@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav>
+        <a href="/logout">Logout</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/profile/{{ user.id }}">Profile</a>
+    </nav>
+    <h1>{{ post.title }}</h1>
+    <h6>by {{ post.author }}</h6>
+    <p><em>You finished this book on {{ post.date_finished.strftime("%B %d, %Y") }}.</em></p>
+    <img src={{ post.cover_img }} alt="cover image">
+    <h4>Thoughts</h4>
+    <p>{{ post.thoughts }}</p>
+    <h4>Rating</h4>
+    <p>{{ post.rating }}</p>
+    <button><a href="/edit/post/{{ post.id }}">Edit</a></button>
+</body>
+</html>
